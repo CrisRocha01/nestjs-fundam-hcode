@@ -7,10 +7,11 @@ export class UserController {
     return { body };
   }
 
-  @Get('users')
-  async read() {
+  @Get()
+  async list() {
     return { users: [] };
   }
+
   @Get(':id')
   async readone(@Param() params) {
     return { users: {}, params };
