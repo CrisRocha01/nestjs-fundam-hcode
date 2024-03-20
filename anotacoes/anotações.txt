@@ -22,45 +22,46 @@
 
 * Metodos de request:
 * Ciclo de vida no nest:
- - o controller recebe todos os requests e trata conforme metodo (define uma rota);
+ - Os controller recebe todos os requests e trata conforme metodo (define uma rota);
+	- Requist
 	- validação
-	- modificação
+	- modificação/tratamentos
 	- Response
 
 *Boostrap no nest:
- - auxlia iniciar a aplicação;
+ - Inicia a aplicação: é uma funçao async responsável por criar a aplicação nest e recebe como parametro o module inicial da aplicação;
 
 * @Decorators:
  - Recurso do typescript;
  - Modifica um elemento em tempo de execução;
 
 *module:
- - divisão da aplicação em seções cujos recursos pode ser exportados e importados
- - agrupa recursos como serviços e controles;
+ - divide a aplicação em modulos cujos recursos pode ser exportados e importados
+ - agrupa recursos como serviços(providers) e controles;
 ex: modulo de serviço de upload; usuários, produtos
- -  exportável do js
+ -  exportável exports: [AppService]
  - é possível importar outros módulos nos módulos
 
 
 *Controllers:
- - Recebe os requests da aplicação;
- - responsável por determinar os métodos e as rotas dos requests;
+ - Recebe os requests do client-side;
+ - responsável por receber os métodos e as rotas dos requests;
  - faz a distribuição;
  - recebe os requests e direciona para uma rota
- - não é boa prática fazer solicitações ou resoluções no controller;
- - @Controller(<recebe a rota: string>)
+ - não é boa prática fazer solicitações(ex: BD) ou resoluções(tratamentos) no controller;
+ - @Controller(<recebe a rota: string>)ex: '/';
  - "Caixa agrupadora";
  
 
-*Service:
+*Services(providers):
  - Processa as regras;
  - faz solicitações no BD;
  - usa o @Injectable() -> injeta a classe em outras classes;
 
 * CRUD:
- - API: Interface para aplicação;
+ - API: Interface para aplicação: parte visivel para o uso/acesso para outra aplicações;
  - REST: convenção de regras para criação de uma API WEB.
- - CRUD: Criar(post), Read(get), Update(put(tudo)/patch), Delete(delete)
+ - CRUD: Criar(post), Read(get), Update(put(tudo)/patch(parcial)), Delete(delete)
 
 * DTO: Objeto de transferência de dados
  - Padrão de projeto usado para tranferir dados em aplicações de um ambiente para outro;
