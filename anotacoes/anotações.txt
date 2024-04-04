@@ -100,12 +100,18 @@ app.useGlobalPipes(new ValidationPipe());
 -----------------------------------------------
 Instação da biblioteca para Partial type (usada no patch)
 npm i @nestjs/swagger
+importação do type:
+npm i @nestjs/mapped-types
 
 ------------------------------
+forma de tranformar o id do request
+@Param('id', ParseIntPipe) id: number
+
+-----------------------------
 Instação prisma:
 npm i -D prisma
 
-instalar o prima no projeto:
+instalar o prima no projeto(bd novo):
 npx prisma
 
 puxar o bd:
@@ -113,10 +119,29 @@ npx prisma db pull;
 
 criar api js
 npx prisma generate (rodar sempre que mudar os dados da tabela)
+
+criar o .env e a pasta prisma
+prisma init
+
+puxar os dados do bd para criar uma classe
+npx prisma db pull
+
+criar Prisma Client livrary
+npx prisma generate
 -------------------------------------
 instalar o jwt
 npm i @nestjs/jwt
+
 --------------------------------------------------
+ORM(Object Relational Mapping):
+ - padrão Representa as tabelas ou coleções de bd com classe o obj.
+ - cada tabela é representada por uma classes.
+ - cada registro é uma instancia da classe.
+ - querys são métodos;
+ - Melhor para manter o padrão e auxilia na manutenção.
+
+
+--------------------------------------
 EXEMPLO DE CRIAÇÃO DE CRUD BÁSICO:
 import { Body, Controller, Get, Param, Post, Put, Patch, Delete,} from '@nestjs/common';
 
